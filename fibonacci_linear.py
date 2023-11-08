@@ -1,20 +1,26 @@
 # Program to determine f(n) for fibonacci given an n
-# This one idk about using, commented/docstring? out for now. Mathisfun provided a forumale for finding f(x) using golden ration
-# I see how it is working, but i don't understand why the golden ratio does what it does.
+# I know why/how this is working.  I'm sure there is a better way, but I want to get this committed in time.
 
-"""
-import math
 def fibonacci(n):
-    x = 0
-    r = 1.61803398874
-    if (n == 0):
-        x = 0
-    elif (n == 1):
-        x = 1
-    else:
-        x = ((r**n)-((1-r)**n)) / math.sqrt(5)
-    
-    return x
 
-print(round(fibonacci(12)))
-"""
+    fseq = [0, 1]
+    for nums in range(n+1):
+        if (n == 0):
+            return 0
+        elif (n == 1):
+            return fseq
+        elif (nums > 1):
+            next_to_add = fseq[nums-1] + fseq[nums-2]
+            fseq.append(next_to_add)
+    return fseq
+    
+
+print("0 and 1 are the first 2 values of the Fibonacci Sequence")
+num_to_pass = input("Enter a sequence number 2 or greter to see its value: ")
+
+build_sequence = fibonacci(int(num_to_pass))
+print(build_sequence)
+fofn = build_sequence.pop(-1)
+print(fofn)
+
+    
