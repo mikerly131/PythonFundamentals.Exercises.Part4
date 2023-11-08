@@ -7,6 +7,11 @@ The function should take in an integer and return the value of x(n).
 * This problem must be solved using recursion. 
 """
 
+def fibonacci(n):
+    return none
+
+
+
 
 def getFibonacciValue(n):
     x = (n - 1) + (n - 2)
